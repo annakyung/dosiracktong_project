@@ -153,4 +153,51 @@ window.onload = function () {
       swiper.slideToLoop(index, 500, false);
     });
   });
+
+  // top 버튼 스크롤 기능
+  const topBtn = document.getElementById("top-btn");
+  topBtn.addEventListener("click", function (event) {
+    event.preventDefault(); // 새창에
+    console.log(window.scrollY);
+
+    if (window.scrollY == 0) {
+      window.scrollTo({
+        top: 99999,
+        behavior: "smooth",
+      });
+    } else {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }
+  });
+
+  // 화살표 이미지 회전
+  const topBtnImg = document.getElementById("top-btn-img");
+  window.addEventListener("scroll", function (scTop) {
+    // scTop을 불러옴
+    scTop = this.document.documentElement.scrollTop;
+
+    if (scTop > 0) {
+      topBtnImg.classList.add("up");
+    } else {
+      // up을 없애줘라
+      topBtnImg.classList.remove("up");
+    }
+  });
+
+  // 안내창 닫기
+  const closeTap = document.getElementById("modal-close");
+  window.addEventListener("click", function (cTap) {
+    System.exit(0);
+  });
+
+  // 안내창 스크립트
+  let body = document.querySelector("body");
+  let modal = document.querySelector(".modal-wrap");
+  modal.addEventListener("click", function () {
+    modal.style.display = "none";
+    fadeout(modal);
+  });
 };
