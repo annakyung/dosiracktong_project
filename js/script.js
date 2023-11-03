@@ -154,6 +154,14 @@ window.onload = function () {
     });
   });
 
+  const businessModal = document.querySelector(".business-modal");
+  businessModal.addEventListener("click", function () {
+    businessModal.style.display = "none";
+    fadeout(businessModal);
+  });
+
+  var swiper = new Swiper(".sw-business", {});
+
   // top 버튼 스크롤 기능
   const topBtn = document.getElementById("top-btn");
   topBtn.addEventListener("click", function (event) {

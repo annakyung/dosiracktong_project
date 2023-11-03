@@ -816,6 +816,9 @@ body.active {
 .sw-business {
   height: 400px;
 }
+.sw-business > .swiper-wrapper > .swiper-slide {
+  width: calc(100% / 3);
+}
 .sw-business a {
   position: relative;
   display: block;
@@ -902,6 +905,9 @@ body.active {
   }
 }
 @media screen and (max-width: 1024px) {
+  .sw-business .swiper-slide {
+    width: 100%;
+  }
   .sw-business a {
     padding: 60px;
   }
